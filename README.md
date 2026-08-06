@@ -40,6 +40,42 @@ The project integrates data from multiple sources:
 7. Stored Silver and Gold datasets in ADLS Gen2 following the Medallion Architecture.
 8. Used the Gold dataset for reporting and visualization in Power BI.
 
+   Azure SQL Database
+├── Transactions
+├── Products
+└── Stores
+
+REST API (JSON)
+└── Customers
+
+        ↓
+
+Azure Data Factory
+
+        ↓
+
+ADLS Gen2 (Bronze)
+
+        ↓
+
+Azure Databricks (PySpark)
+
+        ↓
+
+ADLS Gen2 (Silver)
+
+        ↓
+
+Azure Databricks (Aggregations)
+
+        ↓
+
+ADLS Gen2 (Gold)
+
+        ↓
+
+Power BI Dashboard
+
 ## Medallion Architecture
 
 ### Bronze Layer
